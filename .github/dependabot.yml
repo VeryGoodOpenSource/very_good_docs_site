@@ -6,6 +6,6 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "npm"
-    directory: "/src/docs_site"
+    directory: "/src/very_good_docs_site"
     schedule:
       interval: "daily"

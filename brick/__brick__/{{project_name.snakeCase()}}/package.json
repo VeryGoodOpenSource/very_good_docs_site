@@ -1,5 +1,5 @@
 {
-  "name": "docs-site",
+  "name": "{{project_name.paramCase()}}",
   "version": "0.0.0",
   "private": true,
   "scripts": {

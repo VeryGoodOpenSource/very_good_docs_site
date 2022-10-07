@@ -1,29 +1,21 @@
 name: main
 
-on:
-  pull_request:
-    paths:
-      - ".github/workflows/main.yaml"
-      - "src/very_good_docs_site/**"
+on: pull_request
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: src/very_good_docs_site
-
     steps:
       - name: 📚 Git Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: ⚙️ Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: yarn
-          cache-dependency-path: src/very_good_docs_site/yarn.lock
+          cache-dependency-path: yarn.lock
 
       - name: 📦 Install Dependencies
         run: yarn install --frozen-lockfile

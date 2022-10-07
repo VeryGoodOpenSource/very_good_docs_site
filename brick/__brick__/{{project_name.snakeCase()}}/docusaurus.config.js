@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Docs Site',
-  tagline: 'A Very Good Docs Site',
-  url: 'https://your-docs-site.com',
+  title: '{{project_name.titleCase()}}',
+  tagline: '{{{description}}}',
+  url: 'https://{{project_name.paramCase()}}.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -16,8 +16,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'verygoodopensource', // Usually your GitHub org/user name.
-  projectName: 'very_good_docs_site', // Usually your repo name.
+  organizationName: '{{{org_name}}}', // Usually your GitHub org/user name.
+  projectName: '{{project_name.snakeCase()}}', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -37,7 +37,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/verygoodopensource/very_good_docs_site/tree/main/',
+            'https://github.com/{{{org_name}}}/{{project_name.snakeCase()}}/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -50,9 +50,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Docs Site',
+        title: '{{project_name.titleCase()}}',
         logo: {
-          alt: 'Docs Site Logo',
+          alt: '{{project_name.titleCase()}} Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -63,7 +63,7 @@ const config = {
             label: 'Overview',
           },
           {
-            href: 'https://github.com/verygoodopensource/very_good_docs_site',
+            href: 'https://github.com/{{{org_name}}}/{{project_name.snakeCase()}}',
             position: 'right',
             className: 'navbar-github-icon',
             'aria-label': 'GitHub repository',
@@ -86,7 +86,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                href: 'https://verygood.ventures/blog',
+                href: '#',
               },
             ],
           },
@@ -95,12 +95,11 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/verygoodopensource/very_good_docs_site',
+                href: 'https://github.com/{{{org_name}}}/{{project_name.snakeCase()}}',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Very Good Ventures.<br/>Built with 💙 by Very Good Ventures.`,
       },
       prism: {
         additionalLanguages: ['bash', 'dart', 'yaml'],
