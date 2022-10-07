@@ -86,7 +86,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                href: 'https://verygood.ventures/blog',
+                href: '#',
               },
             ],
           },
@@ -100,7 +100,6 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Very Good Ventures.<br/>Built with 💙 by Very Good Ventures.`,
       },
       prism: {
         additionalLanguages: ['bash', 'dart', 'yaml'],

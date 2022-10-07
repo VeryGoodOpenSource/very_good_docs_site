@@ -41,10 +41,6 @@ html[data-theme='dark'] .footer {
   background-color: var(--ifm-footer-background-color);
 }
 
-html footer .footer__copyright {
-  font-size: 0.75rem;
-}
-
 /* GitHub Navbar Icon */
 .navbar-github-icon:hover {
   opacity: 0.6;

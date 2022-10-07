@@ -42,6 +42,7 @@ void main() async {
         file = await file.writeAsString(contents
             .replaceAll('A Very Good Docs Site', '{{{description}}}')
             .replaceAll('2022', '{{current_year}}')
+            .replaceAll('verygoodopensource', '{{{org_name}}}')
             .replaceAll(
               'very_good_docs_site',
               '{{project_name.snakeCase()}}',

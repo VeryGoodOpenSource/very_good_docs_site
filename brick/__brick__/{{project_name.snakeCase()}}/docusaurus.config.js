@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'verygoodopensource', // Usually your GitHub org/user name.
+  organizationName: '{{{org_name}}}', // Usually your GitHub org/user name.
   projectName: '{{project_name.snakeCase()}}', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -37,7 +37,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/verygoodopensource/{{project_name.snakeCase()}}/tree/main/',
+            'https://github.com/{{{org_name}}}/{{project_name.snakeCase()}}/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -63,7 +63,7 @@ const config = {
             label: 'Overview',
           },
           {
-            href: 'https://github.com/verygoodopensource/{{project_name.snakeCase()}}',
+            href: 'https://github.com/{{{org_name}}}/{{project_name.snakeCase()}}',
             position: 'right',
             className: 'navbar-github-icon',
             'aria-label': 'GitHub repository',
@@ -86,7 +86,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                href: 'https://verygood.ventures/blog',
+                href: '#',
               },
             ],
           },
@@ -95,12 +95,11 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/verygoodopensource/{{project_name.snakeCase()}}',
+                href: 'https://github.com/{{{org_name}}}/{{project_name.snakeCase()}}',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Very Good Ventures.<br/>Built with 💙 by Very Good Ventures.`,
       },
       prism: {
         additionalLanguages: ['bash', 'dart', 'yaml'],

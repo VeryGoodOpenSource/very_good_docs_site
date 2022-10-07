@@ -9,10 +9,15 @@ vars:
   project_name:
     type: string
     description: The site name
-    default: my_site
+    default: my_docs_site
     prompt: What is the site name?
   description:
     type: string
     description: The site description
     default: A very good docs site
     prompt: What is the site description?
+  org_name:
+    type: string
+    description: The organization name
+    default: my_org
+    prompt: What is the repo organization name?
