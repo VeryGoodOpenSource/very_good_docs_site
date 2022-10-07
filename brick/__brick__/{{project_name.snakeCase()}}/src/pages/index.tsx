@@ -15,7 +15,6 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <HomepageCTA />
-        <div style={{ height: '2em' }}></div>
         <HomepageHeroImage />
       </div>
     </header>
@@ -26,7 +25,7 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      description={`The official documentation site for Docs Site. ${siteConfig.tagline}.`}
+      description={`The official documentation site for {{project_name.titleCase()}}. ${siteConfig.tagline}.`}
     >
       <HomepageHeader />
       <main>
@@ -47,12 +46,13 @@ function HomepageCTA() {
 }
 
 function HomepageHeroImage() {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <img
-      src={isDarkTheme ? 'img/hero_dark.svg' : 'img/hero.svg'}
+      className={clsx(styles.heroImage)}
+      src={colorMode == 'dark' ? 'img/hero_dark.svg' : 'img/hero.svg'}
       alt="Hero"
-      height="450"
+      width="720"
     />
   );
 }

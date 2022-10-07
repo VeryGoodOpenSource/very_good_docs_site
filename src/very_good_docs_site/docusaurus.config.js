@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Docs Site',
+  title: 'Very Good Docs Site',
   tagline: 'A Very Good Docs Site',
-  url: 'https://your-docs-site.com',
+  url: 'https://very-good-docs-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -50,9 +50,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Docs Site',
+        title: 'Very Good Docs Site',
         logo: {
-          alt: 'Docs Site Logo',
+          alt: 'Very Good Docs Site Logo',
           src: 'img/logo.svg',
         },
         items: [

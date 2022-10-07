@@ -6,8 +6,13 @@ environment:
   mason: ">=0.1.0-dev.26 <0.1.0"
 
 vars:
-  name:
+  project_name:
     type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    description: The site name
+    default: my_site
+    prompt: What is the site name?
+  description:
+    type: string
+    description: The site description
+    default: A very good docs site
+    prompt: What is the site description?
