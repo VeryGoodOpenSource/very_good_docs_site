@@ -4,7 +4,7 @@ on:
   pull_request:
     paths:
       - ".github/workflows/main.yaml"
-      - "src/docs_site/**"
+      - "src/very_good_docs_site/**"
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: src/docs_site
+        working-directory: src/very_good_docs_site
 
     steps:
       - name: 📚 Git Checkout
@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 16.x
           cache: yarn
-          cache-dependency-path: src/docs_site/yarn.lock
+          cache-dependency-path: src/very_good_docs_site/yarn.lock
 
       - name: 📦 Install Dependencies
         run: yarn install --frozen-lockfile
