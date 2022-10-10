@@ -1,10 +1,13 @@
 name: main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   pull_request:
-    paths:
-      - ".github/workflows/main.yaml"
-      - "src/very_good_docs_site/**"
+    branches:
+      - main
 
 jobs:
   semantic-pull-request:
