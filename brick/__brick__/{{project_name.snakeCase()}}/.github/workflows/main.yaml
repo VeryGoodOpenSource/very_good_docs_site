@@ -14,17 +14,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: yarn
-          cache-dependency-path: yarn.lock
+          cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: 📦 Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: ✨ Check Format
-        run: yarn run format:check
+        run: npm run format:check
 
       - name: 🧹 Lint
-        run: yarn run lint
+        run: npm run lint
 
       - name: 👷 Build website
-        run: yarn build
+        run: npm run build
