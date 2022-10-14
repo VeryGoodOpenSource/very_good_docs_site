@@ -24,6 +24,11 @@ void main() async {
   // Copy Project Files
   await Shell.cp(sourcePath, targetPath);
 
+  // Exclude lock file
+  await Shell.rm(
+    p.join(targetPath, 'very_good_docs_site', 'package-lock.json'),
+  );
+
   // Convert Values to Variables
   await Future.wait(
     Directory(p.join(targetPath, 'very_good_docs_site'))
