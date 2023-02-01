@@ -1,3 +1,7 @@
+# 0.0.1+4
+
+- build(deps): various dependency updates
+
 # 0.0.1+3
 
 - build(deps): upgrade to docusaurus 2.2.0
