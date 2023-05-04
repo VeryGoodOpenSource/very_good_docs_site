@@ -1,3 +1,7 @@
+# 0.0.1+6
+
+- build(deps): various dependency updates
+
 # 0.0.1+5
 
 - build(deps): various dependency updates
