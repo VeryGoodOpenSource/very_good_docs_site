@@ -26,16 +26,21 @@ jobs:
       - name: 📚 Git Checkout
         uses: actions/checkout@v4
 
-      - name: ⚙️ Setup Node
-        uses: actions/setup-node@v4
+      - name: 🎯 Setup Dart
+        uses: dart-lang/setup-dart@v1
         with:
-          node-version: 18.x
+          sdk: stable
 
       - name: 🧱 Mason Make
         run: |
           dart pub global activate mason_cli
           mason get
           mason make very_good_docs_site -c brick/config.json -o output --on-conflict overwrite
+
+      - name: ⚙️ Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
 
       - name: 📦 Install Dependencies
         run: |
