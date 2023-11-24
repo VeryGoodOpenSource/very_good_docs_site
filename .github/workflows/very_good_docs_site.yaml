@@ -1,24 +1,26 @@
-name: main
+name: very_good_docs_site
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 on:
+  push:
+    paths:
+      - .github/workflows/very_good_docs_site.yaml
+      - "brick/**"
+    branches:
+      - main
   pull_request:
+    paths:
+      - .github/workflows/very_good_docs_site.yaml
+      - "brick/**"
     branches:
       - main
 
 jobs:
-  semantic-pull-request:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
-
-  build:
+  brick:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: src/very_good_docs_site
 
     steps:
       - name: 📚 Git Checkout
@@ -29,10 +31,17 @@ jobs:
         with:
           node-version: 18.x
           cache: npm
-          cache-dependency-path: src/very_good_docs_site/package-lock.json
+
+      - name: 🧱 Mason Make
+        run: |
+          dart pub global activate mason_cli
+          mason get
+          mason make very_good_docs_site -c brick/config.json -o output --on-conflict overwrite
 
       - name: 📦 Install Dependencies
-        run: npm ci
+        run: |
+          cd output/test_docs_site
+          npm i
 
       - name: ✨ Check Format
         run: npm run format:check
