@@ -48,10 +48,16 @@ jobs:
           npm i
 
       - name: ✨ Check Format
-        run: npm run format:check
+        run: |
+          cd output/test_docs_site
+          npm run format:check
 
       - name: 🧹 Lint
-        run: npm run lint
+        run: |
+          cd output/test_docs_site
+          npm run lint
 
       - name: 👷 Build website
-        run: npm run build
+        run: |
+          cd output/test_docs_site
+          npm run build
