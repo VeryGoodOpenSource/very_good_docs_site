@@ -1,4 +1,4 @@
-# 0.0.1+8
+# 0.0.2
 
 - build(deps-dev): bump @tsconfig/docusaurus in /src/very_good_docs_site ([#135](https://github.com/VeryGoodOpenSource/very_good_docs_site/pull/135))
 - chore: generate template ([#136](https://github.com/VeryGoodOpenSource/very_good_docs_site/pull/136))
